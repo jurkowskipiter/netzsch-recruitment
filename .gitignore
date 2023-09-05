@@ -1,0 +1,7 @@
+# Ignore .vscode folder (contains settings, launch configurations, etc.)
+.vs/*
+
+# Ignore log files
+*.log
+
+
