@@ -22,7 +22,6 @@ C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\Recruitmen
 C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\MainWindow.g.cs
 C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\App.g.cs
 C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\Recruitment.Client_MarkupCompile.cache
-C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\Recruitment.Client_MarkupCompile.lref
 C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\MainWindow.baml
 C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\Recruitment.Client.g.resources
 C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\Recruitment.Client.GeneratedMSBuildEditorConfig.editorconfig

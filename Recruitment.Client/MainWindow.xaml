@@ -3,11 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Recruitment.Client"
-        mc:Ignorable="d" FontSize="22"
+        mc:Ignorable="d" FontSize="18"
         Title="MainWindow" Height="600" Width="800">
     <Window.Resources>
-        <!-- Button style -->
         <Style TargetType="Button">
             <Setter Property="Background" Value="#38746c"/>
             <Setter Property="Foreground" Value="White"/>
@@ -22,19 +20,16 @@
             </Style.Triggers>
         </Style>
 
-        <!-- TextBox style -->
         <Style TargetType="TextBox">
             <Setter Property="MinWidth" Value="300"/>
             <Setter Property="Margin" Value="20"/>
             <Setter Property="FontSize" Value="18"/>
         </Style>
 
-        <!-- ScrollViewer style -->
         <Style TargetType="ScrollViewer">
             <Setter Property="Margin" Value="20"/>
         </Style>
 
-        <!-- ListBox style -->
         <Style TargetType="ListBox">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="Padding" Value="20 10"/>
@@ -56,27 +51,33 @@
         <Image Source="/Resources/Images/Netzsch.jpg" Grid.Row="1"
                Width="200" Height="47" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,15,10,10"/>
 
+        <TextBlock Grid.Row="1" FontSize="18" Width="300" FontWeight="Bold" VerticalAlignment="Center" Margin="120,7,1,0">
+            User:
+        </TextBlock>
+
+        <TextBox Name="userName" MaxWidth="300" Height="auto" Margin="250,7,30,0" Padding="-10, -10, -200, -10" TextChanged="UserName_TextChanged" Grid.Row="1" VerticalAlignment="Center" />
+        
         <Button x:Name="openConnection" Height="45" HorizontalAlignment="Right" Grid.Row="1"
-        Click="openConnection_Click" Margin="0,12,10,5">
+        Click="openConnection_Click" Margin="0,12,25,5">
             Connect
         </Button>
 
         <TextBlock Grid.Row="2" FontSize="22" Width="300" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="58,12,1,0">
-            Informations:
+            Data:
         </TextBlock>
 
         <ScrollViewer
             VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,0,12,12"
         Grid.Row="3"
         VerticalScrollBarVisibility="Auto" Width="760" Height="250">
-            <ListBox x:Name="messages"
-             Padding="20 0" BorderThickness="0" />
+            <ListBox x:Name="messages" BorderThickness="1"
+             Padding="0" Margin="18,0,0,0"/>
 
         </ScrollViewer>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Left" Margin="10">
-            <TextBox x:Name="messageInput" MinWidth="620"/>
-            <Button x:Name="sendMessage" IsEnabled="False" Height="45" Width="99" Click="sendMessage_Click" Margin="5,10,10,5">
+        <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Left" Margin="30">
+            <TextBox x:Name="messageInput" MinWidth="620" Padding="-10,-10,0,-10" Margin="0,5,0,0" VerticalAlignment="Center"/>
+            <Button x:Name="sendMessage" IsEnabled="False" Height="45" Width="99" Click="SendMessage_Click" Margin="5,10,10,5">
                 Send
             </Button>
         </StackPanel>

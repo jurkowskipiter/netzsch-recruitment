@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using Microsoft.AspNetCore.SignalR.Client;
 
 namespace Recruitment.Client;
@@ -8,14 +9,11 @@ namespace Recruitment.Client;
 public partial class MainWindow : Window
 {
     public HubConnection connection;
-    public string ConnectionStatus { get; set; } = "TEST";
+    private string UserName { get; set; } = "Default user";
 
     public MainWindow()
     {
         InitializeComponent();
-
-        //var newMessage = "Disconnected";
-        //messages.Items.Add(newMessage);
 
         connection = new HubConnectionBuilder()
             .WithUrl("https://localhost:7181/chathub")
@@ -75,7 +73,6 @@ public partial class MainWindow : Window
             messages.Items.Add("Connection Started");
             openConnection.IsEnabled = false;
             sendMessage.IsEnabled = true;
-            ConnectionStatus = "Connected";
         }
         catch (Exception ex)
         {
@@ -83,16 +80,21 @@ public partial class MainWindow : Window
         }
     }
 
-    private async void sendMessage_Click(object sender, RoutedEventArgs e)
+    private async void SendMessage_Click(object sender, RoutedEventArgs e)
     {
         try
         {
-            await connection.InvokeAsync("SendMessage",
-                "WPF Client", messageInput.Text);
+            await connection.InvokeAsync("SendMessage", UserName, messageInput.Text);
         }
         catch (Exception ex)
         {
             messages.Items.Add(ex.Message);
         }
+    }
+
+    private void UserName_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        TextBox textBox = (TextBox)sender;
+        UserName = textBox.Text;
     }
 }
