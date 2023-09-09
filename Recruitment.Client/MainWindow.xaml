@@ -4,35 +4,83 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Recruitment.Client"
-        mc:Ignorable="d" FontSize="24"
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d" FontSize="22"
+        Title="MainWindow" Height="600" Width="800">
+    <Window.Resources>
+        <!-- Button style -->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#38746c"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="15 10"/>
+            <Setter Property="Margin" Value="15"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#005A9E"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- TextBox style -->
+        <Style TargetType="TextBox">
+            <Setter Property="MinWidth" Value="300"/>
+            <Setter Property="Margin" Value="20"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+        <!-- ScrollViewer style -->
+        <Style TargetType="ScrollViewer">
+            <Setter Property="Margin" Value="20"/>
+        </Style>
+
+        <!-- ListBox style -->
+        <Style TargetType="ListBox">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Padding" Value="20 10"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+
         </Grid.RowDefinitions>
 
-        <Button x:Name="openConnection" Grid.Row="0" HorizontalAlignment="Center"
-                Padding="20 10" Margin="20" Click="openConnection_Click">
-            Open Connection
+        <Border Background="#38746c" Height="5" VerticalAlignment="Top" Grid.Row="0"/>
+        <Image Source="/Resources/Images/Netzsch.jpg" Grid.Row="1"
+               Width="200" Height="47" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,15,10,10"/>
+
+        <Button x:Name="openConnection" Height="45" HorizontalAlignment="Right" Grid.Row="1"
+        Click="openConnection_Click" Margin="0,12,10,5">
+            Connect
         </Button>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
-            <TextBox x:Name="messageInput" MinWidth="300" Margin="20"/>
-            <Button x:Name="sendMessage" IsEnabled="False"
-                    Padding="20 10" Margin="20" Click="sendMessage_Click">
-                Send Message
+        <TextBlock Grid.Row="2" FontSize="22" Width="300" FontWeight="Bold"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="58,12,1,0">
+            Informations:
+        </TextBlock>
+
+        <ScrollViewer
+            VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,0,12,12"
+        Grid.Row="3"
+        VerticalScrollBarVisibility="Auto" Width="760" Height="250">
+            <ListBox x:Name="messages"
+             Padding="20 0" BorderThickness="0" />
+
+        </ScrollViewer>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Left" Margin="10">
+            <TextBox x:Name="messageInput" MinWidth="620"/>
+            <Button x:Name="sendMessage" IsEnabled="False" Height="45" Width="99" Click="sendMessage_Click" Margin="5,10,10,5">
+                Send
             </Button>
         </StackPanel>
 
-        <ScrollViewer
-            Grid.Row="2" Margin="20" MaxHeight="200" 
-            VerticalScrollBarVisibility="Auto">
-            <ListBox x:Name="messages" HorizontalAlignment="Stretch"
-                     Padding="20 10" BorderThickness="0" />
-            
-        </ScrollViewer>
+
     </Grid>
 </Window>

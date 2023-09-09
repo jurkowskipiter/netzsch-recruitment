@@ -7,10 +7,15 @@ namespace Recruitment.Client;
 
 public partial class MainWindow : Window
 {
-    HubConnection connection;
+    public HubConnection connection;
+    public string ConnectionStatus { get; set; } = "TEST";
+
     public MainWindow()
     {
         InitializeComponent();
+
+        //var newMessage = "Disconnected";
+        //messages.Items.Add(newMessage);
 
         connection = new HubConnectionBuilder()
             .WithUrl("https://localhost:7181/chathub")
@@ -70,6 +75,7 @@ public partial class MainWindow : Window
             messages.Items.Add("Connection Started");
             openConnection.IsEnabled = false;
             sendMessage.IsEnabled = true;
+            ConnectionStatus = "Connected";
         }
         catch (Exception ex)
         {
