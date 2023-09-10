@@ -9,11 +9,13 @@ namespace Recruitment.Client;
 public partial class MainWindow : Window
 {
     public HubConnection connection;
-    private string UserName { get; set; } = string.Empty;
+    private string UserName { get; set; }
 
     public MainWindow()
     {
         InitializeComponent();
+
+        UserName = "Default Windows User";
 
         connection = new HubConnectionBuilder()
             .WithUrl("https://localhost:7181/messagehub")
@@ -84,12 +86,17 @@ public partial class MainWindow : Window
     {
         try
         {
-            if (UserName == string.Empty)
+            if (userName.Text == string.Empty)
             {
-                UserName = "Default Windows User";
+                userName.Text = "Default Windows User";
             }
 
-            await connection.InvokeAsync("SendMessage", UserName, messageInput.Text);
+            if (messageInput.Text == string.Empty)
+            {
+                messageInput.Text = "Default message";
+            }
+
+            await connection.InvokeAsync("SendMessage", userName.Text, messageInput.Text);
         }
         catch (Exception ex)
         {

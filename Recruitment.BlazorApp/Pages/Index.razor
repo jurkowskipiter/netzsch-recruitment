@@ -32,7 +32,6 @@
     private List<string> messages = new List<string>();
     private string? userInput;
     private string? messageInput;
-    private bool isSendButtonEnabled;
 
     public bool IsConnected =>
         hubConnection?.State == HubConnectionState.Connected;

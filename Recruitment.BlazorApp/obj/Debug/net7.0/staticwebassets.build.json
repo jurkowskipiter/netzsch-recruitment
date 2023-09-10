@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sjECG+fAzQ55LZkcsK8ZeqovB3r7IrcdAZ6vXKbI2QM=",
+  "Hash": "SXmBvX3SsYosy+Sq4S74BF2IdcONuyQADpzJDtG4fi0=",
   "Source": "Recruitment.BlazorApp",
   "BasePath": "_content/Recruitment.BlazorApp",
   "Mode": "Default",
@@ -253,23 +253,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
-    },
-    {
-      "Identity": "C:\\Repository\\Recruitment\\Recruitment.BlazorApp\\wwwroot\\favicon.png",
-      "SourceId": "Recruitment.BlazorApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Repository\\Recruitment\\Recruitment.BlazorApp\\wwwroot\\",
-      "BasePath": "_content/Recruitment.BlazorApp",
-      "RelativePath": "favicon.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.png"
     }
   ]
 }
