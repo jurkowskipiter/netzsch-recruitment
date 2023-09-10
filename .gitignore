@@ -5,3 +5,26 @@
 *.log
 
 
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.dll
+*.obj
+*.exe
+*.pdb
+*.suo
+*.user
+*.vscode
+/packages/
+/node_modules/
+/bower_components/
+Debug/
+/Release/
+*.user
+*.suo
+*.cache
+*.vspscc
+*_i.c
+*_p.c
+/TestResults/
