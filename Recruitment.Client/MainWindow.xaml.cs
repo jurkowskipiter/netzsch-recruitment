@@ -9,14 +9,14 @@ namespace Recruitment.Client;
 public partial class MainWindow : Window
 {
     public HubConnection connection;
-    private string UserName { get; set; } = "Default user";
+    private string UserName { get; set; } = string.Empty;
 
     public MainWindow()
     {
         InitializeComponent();
 
         connection = new HubConnectionBuilder()
-            .WithUrl("https://localhost:7181/chathub")
+            .WithUrl("https://localhost:7181/messagehub")
             .WithAutomaticReconnect()
             .Build();
 
@@ -56,7 +56,7 @@ public partial class MainWindow : Window
         };
     }
 
-    private async void openConnection_Click(object sender, RoutedEventArgs e)
+    private async void OpenConnection_Click(object sender, RoutedEventArgs e)
     {
         connection.On<string, string>("ReceiveMessage", (user, message) =>
         {
@@ -84,6 +84,11 @@ public partial class MainWindow : Window
     {
         try
         {
+            if (UserName == string.Empty)
+            {
+                UserName = "Default Windows User";
+            }
+
             await connection.InvokeAsync("SendMessage", UserName, messageInput.Text);
         }
         catch (Exception ex)

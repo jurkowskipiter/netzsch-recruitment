@@ -1,4 +1,3 @@
-using Recruitment.BlazorApp.Data;
 using Microsoft.AspNetCore.ResponseCompression;
 using Recruitment.BlazorApp.Hubs;
 
@@ -7,7 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.Services.AddResponseCompression(opts =>
 {
@@ -34,7 +32,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.MapBlazorHub();
-app.MapHub<ChatHub>("/chathub");
+app.MapHub<MessageHub>("/messagehub");
 app.MapFallbackToPage("/_Host");
 
 app.Run();

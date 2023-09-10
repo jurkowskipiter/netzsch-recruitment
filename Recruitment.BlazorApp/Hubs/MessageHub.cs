@@ -2,7 +2,7 @@
 
 namespace Recruitment.BlazorApp.Hubs;
 
-public class ChatHub : Hub
+public class MessageHub : Hub
 {
     public async Task SendMessage(string user, string message)
     {

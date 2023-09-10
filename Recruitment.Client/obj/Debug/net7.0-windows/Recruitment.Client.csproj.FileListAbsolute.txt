@@ -19,10 +19,10 @@ C:\Repository\Recruitment\Recruitment.Client\bin\Debug\net7.0-windows\Microsoft.
 C:\Repository\Recruitment\Recruitment.Client\bin\Debug\net7.0-windows\Microsoft.Extensions.Primitives.dll
 C:\Repository\Recruitment\Recruitment.Client\bin\Debug\net7.0-windows\System.IO.Pipelines.dll
 C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\Recruitment.Client.csproj.AssemblyReference.cache
+C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\MainWindow.baml
 C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\MainWindow.g.cs
 C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\App.g.cs
 C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\Recruitment.Client_MarkupCompile.cache
-C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\MainWindow.baml
 C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\Recruitment.Client.g.resources
 C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\Recruitment.Client.GeneratedMSBuildEditorConfig.editorconfig
 C:\Repository\Recruitment\Recruitment.Client\obj\Debug\net7.0-windows\Recruitment.Client.AssemblyInfoInputs.cache

@@ -58,7 +58,7 @@
         <TextBox Name="userName" MaxWidth="300" Height="auto" Margin="250,7,30,0" Padding="-10, -10, -200, -10" TextChanged="UserName_TextChanged" Grid.Row="1" VerticalAlignment="Center" />
         
         <Button x:Name="openConnection" Height="45" HorizontalAlignment="Right" Grid.Row="1"
-        Click="openConnection_Click" Margin="0,12,25,5">
+        Click="OpenConnection_Click" Margin="0,12,25,5">
             Connect
         </Button>
 

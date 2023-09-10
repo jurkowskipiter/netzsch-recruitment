@@ -6,20 +6,18 @@
 <PageTitle>Index</PageTitle>
 
 <div class="form-group">
-    <label>
-        User:
-        <input @bind="userInput" />
-    </label>
+    <label for="userInput">User:</label>
+    <input @bind="userInput" class="form-control" id="userInput" />
 </div>
+
 <div class="form-group">
-    <label>
-        Message:
-        <input @bind="messageInput" size="50" />
-    </label>
+    <label for="messageInput">Message:</label>
+    <input @bind="messageInput" class="form-control" id="messageInput" size="50" />
 </div>
-<button @onclick="Send" disabled="@(!IsConnected)">Send</button>
 
 <hr>
+
+<button @onclick="Send" class="btn mt-2 mb-3" style="background-color:#38746c;color:#FFFFFF;" disabled="@(!IsConnected)">Send</button>
 
 <ul id="messagesList">
     @foreach (var message in messages)
@@ -37,7 +35,7 @@
     protected override async Task OnInitializedAsync()
     {
         hubConnection = new HubConnectionBuilder()
-            .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
+            .WithUrl(Navigation.ToAbsoluteUri("/messagehub"))
             .Build();
 
         hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
@@ -54,6 +52,10 @@
     {
         if (hubConnection is not null)
         {
+            if(userInput == string.Empty)
+            {
+                userInput = "Default Web App user";
+            }
             await hubConnection.SendAsync("SendMessage", userInput, messageInput);
         }
     }
